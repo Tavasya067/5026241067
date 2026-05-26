@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DosenController;
 use App\Http\Controllers\MenuController;
 
+use App\Http\Controllers\PegawaiDBController;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -37,3 +39,6 @@ Route::get('pert4', [MenuController::class, 'pert4']);
 Route::get('pert5', [MenuController::class, 'pert5']);
 Route::get('respons', [MenuController::class, 'respons']);
 Route::get('temp', [MenuController::class, 'temp']);
+
+//routes CRUD
+Route::get('/pegawai', [PegawaiDBController::class, 'index']);
