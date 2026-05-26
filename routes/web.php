@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DosenController;
 use App\Http\Controllers\MenuController;
-
+use App\Http\Controllers\PegawaiController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PegawaiDBController;
 
 Route::get('/', function () {
@@ -39,6 +40,15 @@ Route::get('pert4', [MenuController::class, 'pert4']);
 Route::get('pert5', [MenuController::class, 'pert5']);
 Route::get('respons', [MenuController::class, 'respons']);
 Route::get('temp', [MenuController::class, 'temp']);
+
+Route::get('/pegawailama/{nama}', [PegawaiController::class, 'index']); //Diganti pegawailama agar tidak crash dengan pegawai
+Route::get('/formulir', [PegawaiController::class, 'formulir']);
+Route::post('/formulir/proses', [PegawaiController::class, 'proses']);
+
+//blog
+Route::get('/blog', [BlogController::class, 'home']);
+Route::get('/blog/tentang', [BlogController::class, 'tentang']);
+Route::get('/blog/kontak', [BlogController::class, 'kontak']);
 
 //routes CRUD
 Route::get('/pegawai', [PegawaiDBController::class, 'index']);
