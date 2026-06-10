@@ -11,7 +11,7 @@ class NilaiKuliahController extends Controller
     public function index()
     {
         // mengambil data dari table nilaikuliah dengan pagination
-        $nilaikuliah = DB::table('nilaikuliah')->paginate(10);
+        $nilaikuliah = DB::table('nilaikuliah')->get();
 
         // mengirim data nilaikuliah ke view index
         return view('indexnilaikuliah', ['nilaikuliah' => $nilaikuliah]);

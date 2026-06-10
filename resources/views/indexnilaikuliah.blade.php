@@ -40,5 +40,4 @@
             </tr>
         @endforeach
     </table>
-    {{ $nilaikuliah->links() }}
 @endsection
