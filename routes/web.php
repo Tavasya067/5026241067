@@ -7,6 +7,7 @@ use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PegawaiDBController;
 use App\Http\Controllers\KaosController;
+use App\Http\Controllers\NilaiKuliahController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -68,3 +69,9 @@ Route::get('/kaos/edit/{id}', [KaosController::class, 'edit']);
 Route::post('/kaos/update', [KaosController::class, 'update']);
 Route::get('/kaos/hapus/{id}', [KaosController::class, 'hapus']);
 Route::get('/kaos/cari', [KaosController::class, 'cari']);
+
+//routes CRUD
+Route::get('/nilaikuliah', [NilaiKuliahController::class, 'index']);
+Route::get('/nilaikuliah/tambah', [NilaiKuliahController::class, 'tambah']);
+Route::post('/nilaikuliah/store', [NilaiKuliahController::class, 'store']);
+Route::get('/nilaikuliah/edit/{id}', [NilaiKuliahController::class, 'edit']);
